@@ -1,0 +1,84 @@
+
+/* ==========================================================================
+   Globals
+   ========================================================================== */
+
+.relative{ position: relative;}
+
+.hide{
+	width: 0 !important;
+	padding: 0  !important;
+	margin: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	border: 0 !important;
+}
+
+.imgleft{
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+.imgright{
+	float: right;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+.center, .imgcenter{
+	display: block;
+	margin: 0 auto;
+}
+
+// Floats
+.left{ float: left !important; }
+.right{ float: right !important; }
+
+// Clearing Floats
+.cleft{clear: left;}
+.cright{clear: right;}
+.clear{
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:before, .clearfix:after{
+	content: "";
+	display: table;
+}
+.clearfix:after{clear: both;}
+.clearfix{*zoom: 1;}
+
+// Clickable block 
+.clickable{cursor: pointer;}
+
+// Miscellaneous useful HTML classes
+  .text-left    { text-align: left !important; }
+  .text-right   { text-align: right !important; }
+  .text-center  { text-align: center !important; }
+  .text-justify { text-align: justify !important; }
+
+// Font smoothing
+// Antialiased font smoothing works best for light text on a dark background.
+// Apply to single elements instead of globally to body.
+// Note this only applies to webkit-based desktop browsers on the Mac.
+.antialiased { -webkit-font-smoothing: antialiased; }
+
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+}
