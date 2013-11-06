@@ -2,6 +2,34 @@
 /* ==========================================================================
    Globals
    ========================================================================== */
+@smallvalue     : 10px; // small value for margins / paddings
+@mediumvalue    : 20px; // medium value for margins / paddings
+@largevalue     : 30px; // large value for margins / paddings
+@gutter         : 20px; // gutter value (%, px, em, rem, etc) for grid layouts
+
+
+//@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+//              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+//              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+//              ~"only screen and (min-device-pixel-ratio: 1.5)";
+//@mobile:      ~"only screen and (max-width: 529px)";
+//@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+//@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+//@desktop-xl:  ~"only screen and (min-width: 1129px)";
+
+
+@Mobile-landscape-portrait :            ~"only screen and (min-device-width : 320px) and (max-device-width : 480px)";
+@Mobile-portrait :                      ~"only screen and (max-width : 320px)";
+@Mobile-landscape :                     ~"only screen and (min-width : 321px)";
+@Iphone4 :                              ~"only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-device-pixel-ratio:1.5)";
+@Tablet-landscape-portrait :            ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+@Tablet-portrait :                      ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
+@Tablet-landscape :                     ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
+@Desktops :                             ~"only screen and (min-width : 1224px)";
+@Large-screens :                        ~"only screen and (min-width : 1824px)";
+
+
+
 
 .relative{ position: relative;}
 
@@ -12,6 +40,12 @@
 	height: 0 !important;
 	overflow: hidden !important;
 	border: 0 !important;
+}
+
+.hide-text {
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
 }
 
 .imgleft{
@@ -57,6 +91,11 @@
 // Clickable block 
 .clickable{cursor: pointer;}
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 // Miscellaneous useful HTML classes
   .text-left    { text-align: left !important; }
   .text-right   { text-align: right !important; }
@@ -68,6 +107,194 @@
 // Apply to single elements instead of globally to body.
 // Note this only applies to webkit-based desktop browsers on the Mac.
 .antialiased { -webkit-font-smoothing: antialiased; }
+
+// Prevent Long URL’s From Breaking Out of Container
+.break {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+.ellipsis {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis; /* Required for IE8 */
+    -o-text-overflow: ellipsis; /* Required for Opera */
+    text-overflow: ellipsis;
+}
+
+// Shadows
+.drop-shadow {
+    background: #9479fa;
+}
+ 
+.drop-shadow.top {
+    box-shadow: 0 -4px 2px -2px rgba(0,0,0,0.4)
+}
+ 
+.drop-shadow.right {
+    box-shadow: 4px 0 2px -2px rgba(0,0,0,0.4)
+}
+ 
+.drop-shadow.bottom {
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4)
+}
+ 
+.drop-shadow.left {
+    box-shadow: -4px 0 2px -2px rgba(0,0,0,0.4)
+}
+
+div[class*="emphasize-"] {
+    background: #69D2E7;
+}
+
+// Shadows Emphasize
+.emphasize-dark {
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.35)
+}
+ 
+.emphasize-light {
+    box-shadow: 0 0 0 10px rgba(255,255,255,.25)
+}
+ 
+.emphasize-inset {
+    box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5)
+}
+ 
+.emphasize-border {
+    box-shadow: inset 0 0 0 7px rgba(255,255,255,.5)
+}
+
+// Shadows Embossed
+div[class*="embossed"] {
+    background: #8ec12d;
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+}
+ 
+.embossed-light {
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+ 
+.embossed-heavy {
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 
+        inset 0 2px 3px rgba(255,255,255,0.3), 
+        inset 0 -2px 3px rgba(0,0,0,0.3),
+        0 1px 1px rgba(255,255,255,0.9);
+}
+
+// Gradients
+div[class*="gradient"]{
+    background-color: #DEB8A0;
+    box-shadow: 0 0 0 1px #a27b62;
+}
+.gradient-light-linear {
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+}
+.gradient-dark-linear {
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
+}
+
+//Rounded Corners
+div[class*="rounded"] {
+    background: #fca1cc;
+}
+ 
+.light-rounded {
+    border-radius: 3px;
+}
+ 
+.heavy-rounded {
+    border-radius: 8px;
+}
+ 
+.full-rounded {
+    border-radius: 50%;
+}
+ 
+.barrel-rounded {
+    border-radius: 20px/60px;
+}
+
+// Inline links
+// This is some dummy text to show an <a href="#" class="inline-link-*">inline link</a>.
+.inline-link-1 {
+    display: inline-block;
+    margin: 0 0.2em;
+    padding: 3px;
+    background: #97CAF2;
+    border-radius: 2px;
+    transition: all 0.3s ease-out; 
+    /* Font styles */
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+ 
+.inline-link-1:hover {
+    background: #53A7EA
+}
+ 
+.inline-link-1:active {
+    background: #C4E1F8
+}
+ 
+.inline-link-1:visited {
+    background: #F2BF97
+}
+
+.inline-link-2 {
+    display: inline-block;
+    border-bottom: 2px dashed rgba(0,0,0,0.9);
+    /* Font styles */
+    text-decoration: none;
+    color: #777;
+}
+ 
+.inline-link-2:hover {
+    border-bottom-style: dotted;
+}
+ 
+.inline-link-2:active {
+    border-bottom-style: solid;
+}
+ 
+.inline-link-2:visited {
+    border-bottom: 2px solid #97CAF2;
+}
+
+.inline-link-3 {
+    display: inline-block;
+    position: relative;
+    padding-left: 6px;
+    /* Font styles */
+    text-decoration: none;
+    color: #6AB3EC;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+}
+ 
+.inline-link-3:hover {
+    color: #3C9CE7;
+}
+ 
+.inline-link-3:before {
+    content: "\25BA";
+    font-size: 80%;
+    display: inline-block;
+    padding-right: 3px;
+    pointer-events: none;
+}
+ 
+.inline-link-3:hover:before {
+    color: #F2BF97;
+}
+
+// Block links
 
 
 html {
@@ -82,3 +309,14 @@ body {
   color: @text-color;
   background-color: @body-bg;
 }
+
+a {
+    text-decoration: none;
+    color: @gray-darker;
+    transition: all 0.3s ease-out;
+    position: relative;
+    padding: .5em;
+    margin: -.5em;
+}
+ 
+a:hover { color: @gray-light; }

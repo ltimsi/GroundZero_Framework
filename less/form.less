@@ -1,0 +1,71 @@
+// INPUTS
+// <input type="text" placeholder="Input name" class="*">
+.simple-input {
+    display: block;
+    padding: 5px;
+    border: 1px solid @gray-light;
+    border-radius: 5px;
+    color: @gray-dark;
+    transition: all 0.3s ease-out;
+}
+ 
+.simple-input:hover {
+    border-radius: 8px
+}
+ 
+.simple-input:focus {
+    outline: none;
+    border-radius: 8px;
+    border-color: #EBD292;
+}
+
+// Inputs Mac Style
+.mac {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 8px;
+    color: #333;
+    box-shadow: 
+        inset 0 2px 0 rgba(0,0,0,.2), 
+        0 0 4px rgba(0,0,0,0.1);
+}
+ 
+.mac:focus {
+    outline: none;
+    box-shadow: 
+        inset 0 2px 0 rgba(0,0,0,.2), 
+        0 0 4px rgba(0,0,0,0.1), 
+        0 0 5px 1px #51CBEE;
+}
+
+// Depth Inputs
+.depth {
+    display: block;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: linear-gradient(#eee, #fff);
+    transition: all 0.3s ease-out;
+    box-shadow: 
+        inset 0 1px 4px rgba(0,0,0,0.4);
+    padding: 5px;
+    color: #555;
+}
+ 
+.depth:focus {
+    outline: none;
+    background-position: 0 -1.7em;
+}
+
+.line {
+    display: block;
+    border: none;
+    color: #333;
+    background: transparent;
+    border-bottom: 1px dotted black;
+    padding: 5px 2px 0 2px;
+}
+ 
+.line:focus {
+    outline: none;
+    border-color: #51CBEE;
+}
