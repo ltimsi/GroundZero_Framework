@@ -1,4 +1,4 @@
-Milo Framework
+Ground Zero Framework
 ==============
 
-Milo Framework is a CSS Framework
+Ground Zero Framework is a CSS Framework
