@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Globals
    ========================================================================== */
@@ -28,10 +27,39 @@
 @Desktops :                             ~"only screen and (min-width : 1224px)";
 @Large-screens :                        ~"only screen and (min-width : 1824px)";
 
-
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+ 
+/* Attribute selector */
+[class*='gdz-'] {
+  float: left;
+  padding: 10px;
+}
+ 
+/* Floats last ".bit-" to the right */
+[class*='gdz-']:last-of-type {
+  padding-right: 10px;
+  float: right;
+}
+ 
+/* Clearfix */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
 .relative{ position: relative;}
+.absolute{position: absolute;}
 
 .hide{
 	width: 0 !important;

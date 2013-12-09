@@ -54,13 +54,10 @@ template {
 html {
   font-family: sans-serif;
   /* 1 */
-
   -ms-text-size-adjust: 100%;
   /* 2 */
-
   -webkit-text-size-adjust: 100%;
   /* 2 */
-
 }
 /**
  * Remove default margin.
@@ -221,10 +218,8 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Correct font family not being inherited in all browsers.
@@ -237,13 +232,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-
   font-size: 100%;
   /* 2 */
-
   margin: 0;
   /* 3 */
-
 }
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
@@ -276,10 +268,8 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
-
   cursor: pointer;
   /* 3 */
-
 }
 /**
  * Re-set default cursor for disabled elements.
@@ -296,10 +286,8 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -309,11 +297,9 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-
   box-sizing: content-box;
 }
 /**
@@ -339,10 +325,8 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
-
   vertical-align: top;
   /* 2 */
-
 }
 /* ==========================================================================
    Tables
@@ -357,8 +341,37 @@ table {
 /* ==========================================================================
    Globals
    ========================================================================== */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Attribute selector */
+[class*='gdz-'] {
+  float: left;
+  padding: 10px;
+}
+/* Floats last ".bit-" to the right */
+[class*='gdz-']:last-of-type {
+  padding-right: 10px;
+  float: right;
+}
+/* Clearfix */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .relative {
   position: relative;
+}
+.absolute {
+  position: absolute;
 }
 .hide {
   width: 0 !important;
@@ -455,10 +468,8 @@ table {
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   /* Required for IE8 */
-
   -o-text-overflow: ellipsis;
   /* Required for Opera */
-
   text-overflow: ellipsis;
 }
 .drop-shadow {
@@ -537,7 +548,6 @@ div[class*="rounded"] {
   border-radius: 2px;
   transition: all 0.3s ease-out;
   /* Font styles */
-
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -555,7 +565,6 @@ div[class*="rounded"] {
   display: inline-block;
   border-bottom: 2px dashed rgba(0, 0, 0, 0.9);
   /* Font styles */
-
   text-decoration: none;
   color: #777;
 }
@@ -573,7 +582,6 @@ div[class*="rounded"] {
   position: relative;
   padding-left: 6px;
   /* Font styles */
-
   text-decoration: none;
   color: #6AB3EC;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
@@ -673,28 +681,20 @@ a:hover {
     box-shadow: none !important;
     text-shadow: none !important;
     /* Images, vectors and such */
-  
     filter: Gray();
     /* IE4-8: depreciated */
-  
     filter: url('desaturate.svg#grayscale');
     /* SVG version for IE10, Firefox, Safari 5 and Opera */
-  
     -webkit-filter: grayscale(100%);
     /* Chrome + Safari 6 */
-  
     -moz-filter: grayscale(100%);
     /* Future proof */
-  
     -ms-filter: grayscale(100%);
     /* Future proof */
-  
     -o-filter: grayscale(100%);
     /* Future proof */
-  
     filter: grayscale(100%);
     /* Future proof or polyfilled */
-  
   }
   a {
     text-decoration: underline;
@@ -707,6 +707,10 @@ a:hover {
     content: "";
   }
 }
+/* ==========================================================================
+   GRID LAYOUT
+   ========================================================================== */
+/* Main Widths */
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   /* Styles */
@@ -714,10 +718,38 @@ a:hover {
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
   /* Styles */
+  .gdz-1,
+  .gdz-2,
+  .gdz-3,
+  .gdz-4,
+  .gdz-5,
+  .gdz-6,
+  .gdz-7,
+  .gdz-8,
+  .gdz-9,
+  .gdz-10,
+  .gdz-11,
+  .gdz-12 {
+    width: 100%;
+  }
 }
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
   /* Styles */
+  .gdz-1,
+  .gdz-2,
+  .gdz-3,
+  .gdz-4,
+  .gdz-5,
+  .gdz-6,
+  .gdz-7,
+  .gdz-8,
+  .gdz-9,
+  .gdz-10,
+  .gdz-11,
+  .gdz-12 {
+    width: 100%;
+  }
 }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
@@ -734,10 +766,100 @@ a:hover {
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
   /* Styles */
+  .gdz-1 {
+    width: 100%;
+  }
+  .gdz-2 {
+    width: 50%;
+  }
+  .gdz-3 {
+    width: 33.33%;
+  }
+  .gdz-4 {
+    width: 25%;
+  }
+  .gdz-5 {
+    width: 20%;
+  }
+  .gdz-6 {
+    width: 16.6666666667%;
+  }
+  .gdz-7 {
+    width: 14.2857142857%;
+  }
+  .gdz-8 {
+    width: 12.5%;
+  }
+  .gdz-9 {
+    width: 11.1111111111%;
+  }
+  .gdz-10 {
+    width: 10%;
+  }
+  .gdz-11 {
+    width: 9.09090909091%;
+  }
+  .gdz-12 {
+    width: 8.33%;
+  }
+  .gdz-25 {
+    width: 25%;
+  }
+  .gdz-50 {
+    width: 50%;
+  }
+  .gdz-75 {
+    width: 75%;
+  }
 }
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
   /* Styles */
+  .gdz-1 {
+    width: 100%;
+  }
+  .gdz-2 {
+    width: 50%;
+  }
+  .gdz-3 {
+    width: 33.33%;
+  }
+  .gdz-4 {
+    width: 25%;
+  }
+  .gdz-5 {
+    width: 20%;
+  }
+  .gdz-6 {
+    width: 16.6666666667%;
+  }
+  .gdz-7 {
+    width: 14.2857142857%;
+  }
+  .gdz-8 {
+    width: 12.5%;
+  }
+  .gdz-9 {
+    width: 11.1111111111%;
+  }
+  .gdz-10 {
+    width: 10%;
+  }
+  .gdz-11 {
+    width: 9.09090909091%;
+  }
+  .gdz-12 {
+    width: 8.33%;
+  }
+  .gdz-25 {
+    width: 25%;
+  }
+  .gdz-50 {
+    width: 50%;
+  }
+  .gdz-75 {
+    width: 75%;
+  }
 }
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-device-pixel-ratio:1.5) {
